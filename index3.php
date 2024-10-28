@@ -1,17 +1,16 @@
 <?php
-//? Cargar el archivo JSON
+
 $jsonFilePath = 'data__rooms.json'; 
 $jsonData = file_get_contents($jsonFilePath);
 
-//? Verifica si la lectura fue exitosa
+
 if ($jsonData === false) {
     die('Error al leer el archivo JSON');
 }
 
-//? Decodifica el JSON en un array de PHP
+
 $rooms = json_decode($jsonData, true);
 
-//? Verifica si la decodificación fue exitosa
 if ($rooms === null) {
     die('Error al decodificar el JSON');
 }
