@@ -61,7 +61,7 @@ function load_rooms_by_type($searchTerm) {
 function load_room(int $id) {
     $conn = db_connection();
 
-    $stmt = $conn->prepare("SELECT id, roomType, number, rate, discount FROM rooms WHERE id = ?");
+    $stmt = $conn->prepare("SELECT id, room_type, number, rate, discount FROM rooms WHERE id = ?");
 
     // Link param
     $stmt->bind_param("i", $id); 
