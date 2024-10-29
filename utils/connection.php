@@ -39,9 +39,9 @@ function load_rooms() {
 
 function load_rooms_by_type($searchTerm) {
     $conn = db_connection();
-
+    print_r ($searchTerm . "asdasd");
     $searchTerm = $conn->real_escape_string($searchTerm);
-    $query = "SELECT id, roomType, rate, discount FROM rooms WHERE roomType LIKE '%$searchTerm%'"; 
+    $query = "SELECT id, room_type, rate, number, discount FROM rooms WHERE room_type LIKE '%$searchTerm%'"; 
     $result = $conn->query($query);
 
     if (!$result) {
